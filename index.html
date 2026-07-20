@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Himani Sharma is an intent-driven product designer based in India. Product thinking, decisive decisions, clear communication." />
-  <meta name="theme-color" content="#141324" />
+  <meta name="theme-color" content="#ecebe2" />
   <meta property="og:title" content="Himani Sharma, Product Designer" />
   <meta property="og:description" content="Intent-driven product designer. Product thinking, decisive decisions, clear communication." />
   <meta property="og:image" content="assets/himani.jpg" />
@@ -14,23 +14,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%234a8fa8'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%237e8b5e'/%3E%3C/svg%3E" />
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Navigation (kept outside the smooth-scroll wrapper) -->
+  <!-- Minimal top bar (kept outside the smooth-scroll wrapper) -->
   <header class="nav" id="nav">
-    <a href="#top" class="nav__brand" aria-label="Home">Himani<span class="dot">.</span></a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="#contact" class="nav__cta">Let's talk</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span>
+    <button class="menu-btn" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
+    <span class="nav__copy">©2026</span>
   </header>
 
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
@@ -40,51 +34,25 @@
     <a href="https://drive.google.com/file/d/1aSHR47vWXW68FOyTYU9VZmEwr8X3EVgl/view?usp=drivesdk" target="_blank" rel="noopener" class="mobile-menu__cta">Résumé</a>
   </div>
 
-  <!-- Everything that scrolls lives inside #smooth -->
   <div id="smooth">
   <main id="top">
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__labels anim-fade">
+        <span class="lbl lbl--l">Product<br />Designer</span>
+        <span class="lbl__block" aria-hidden="true"></span>
+        <span class="lbl lbl--m">UX / UI<br />Designer</span>
+        <span class="lbl lbl--r">Since 2024</span>
+      </div>
 
-      <div class="hero__inner">
-        <div class="hero__content">
-          <p class="hero__eyebrow anim-fade">
-            <span class="pulse"></span> Product Designer · India · Open to work
-          </p>
+      <h1 class="hero__name" aria-label="Himani">
+        <span class="ch" style="--i:0">H</span><span class="ch" style="--i:1">i</span><span class="ch" style="--i:2">m</span><span class="ch" style="--i:3">a</span><span class="ch" style="--i:4">n</span><span class="ch" style="--i:5">i</span>
+      </h1>
 
-          <h1 class="hero__title" aria-label="Intent-driven product design.">
-            <span class="mask"><span class="word" style="--i:0">Intent</span></span>
-            <span class="mask"><span class="word" style="--i:1">driven</span></span>
-            <span class="line-break"></span>
-            <span class="mask"><span class="word" style="--i:2">product</span></span>
-            <span class="mask"><span class="word grad" style="--i:3">design.</span></span>
-          </h1>
-
-          <p class="hero__lede anim-fade d1">
-            I turn messy problems into clear, human products,
-            with sharp thinking behind every pixel.
-          </p>
-
-          <div class="hero__actions anim-fade d2">
-            <a href="#work" class="btn btn--primary">View my work <span class="arrow" aria-hidden="true">↓</span></a>
-            <a href="#contact" class="btn btn--ghost">Get in touch</a>
-          </div>
-
-          <ul class="hero__values anim-fade d3" aria-label="How I work">
-            <li>Product thinking</li>
-            <li>Decisive decisions</li>
-            <li>Clear communication</li>
-          </ul>
-        </div>
-
-        <div class="hero__media anim-photo">
-          <div class="hero__photo-wrap" data-parallax>
-            <img src="assets/himani.jpg" alt="Portrait of Himani Sharma" class="hero__photo" width="896" height="1115" fetchpriority="high" />
-          </div>
-          <div class="hero__tag hero__tag--1">UX / UI</div>
-          <div class="hero__tag hero__tag--2">2 yrs in design</div>
-        </div>
+      <div class="hero__panel anim-photo">
+        <img src="assets/himani.jpg" alt="Portrait of Himani Sharma" class="hero__photo" width="896" height="1115" fetchpriority="high" data-parallax />
+        <img src="assets/qr.png" alt="QR code to Himani's LinkedIn" class="hero__qr" width="120" height="120" loading="lazy" />
+        <p class="hero__intro">Intent-driven product designer turning messy problems into clear, human products.</p>
       </div>
 
       <a href="#work" class="hero__scroll" aria-label="Scroll to work"><span></span></a>
@@ -168,7 +136,7 @@
       <div class="about__grid">
         <div class="about__intro reveal">
           <p class="section-head__kicker"><span>02</span> About</p>
-          <h2 class="about__headline">Two years in, <span class="grad">completely hooked.</span></h2>
+          <h2 class="about__headline">Two years in, <span class="accent">completely hooked.</span></h2>
           <p class="about__text">
             I didn't plan on design. I just gave it a try, and something clicked.
             Today I use AI as my sharpest design partner, yet the thinking and
@@ -190,10 +158,9 @@
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-      <div class="contact__glow" aria-hidden="true"></div>
       <div class="contact__inner reveal">
-        <p class="section-head__kicker"><span>03</span> Contact</p>
-        <h2 class="contact__title">Let's build something <span class="grad">worth using.</span></h2>
+        <p class="section-head__kicker contact__kicker"><span>03</span> Contact</p>
+        <h2 class="contact__title">Let's build something worth using.</h2>
         <p class="contact__sub">Open to junior product designer roles and collaborations.</p>
 
         <div class="contact__links">
