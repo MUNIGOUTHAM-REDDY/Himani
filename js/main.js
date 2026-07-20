@@ -66,7 +66,7 @@
     if (!parallaxEl || reduced) return;
     var p = scrollPos();
     if (p < window.innerHeight) {
-      parallaxEl.style.transform = "translateY(" + (p * 0.06) + "px)";
+      parallaxEl.style.transform = "translateY(" + (p * 0.03) + "px)";
     }
   }
 
