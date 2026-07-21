@@ -132,10 +132,13 @@ html.smooth #smooth { position: fixed; top: 0; left: 0; width: 100%; will-change
 }
 .hero__name-fill {
   display: inline-block; letter-spacing: -0.035em;
-  /* Knockout: the letters are a window onto the portrait behind, which reaches the top */
+  /* Knockout: the letters are holes revealing the portrait behind, kept perfectly
+     continuous with the panel by js (background size/position synced to the photo).
+     The flat colour is a fallback for any area the photo does not cover. */
+  background-color: #9aa9a1;
   background-image: url("../assets/himani.jpg");
   background-size: 100% auto;
-  background-position: center 13%;
+  background-position: center 12%;
   background-repeat: no-repeat;
   -webkit-background-clip: text; background-clip: text;
   color: transparent; -webkit-text-fill-color: transparent;
@@ -147,7 +150,7 @@ html.smooth #smooth { position: fixed; top: 0; left: 0; width: 100%; will-change
   background: var(--sage); border-radius: 14px 14px var(--radius) var(--radius);
   overflow: hidden; aspect-ratio: 4 / 5;
 }
-.hero__photo { position: absolute; top: -7%; left: 0; width: 100%; height: 114%; object-fit: cover; object-position: 50% 16%; }
+.hero__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .hero__panel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(126, 139, 94, 0.28), transparent 30%); mix-blend-mode: multiply; }
 
 .hero__intro {
@@ -252,7 +255,6 @@ html.smooth #smooth { position: fixed; top: 0; left: 0; width: 100%; will-change
 
 @media (min-width: 900px) {
   .hero__panel { aspect-ratio: 16 / 10; }
-  .hero__photo { object-position: 50% 20%; }
   .hero__name { font-size: clamp(9rem, 20vw, 20rem); }
 
   .about__grid { grid-template-columns: 1.1fr 1fr; align-items: center; gap: 60px; }
