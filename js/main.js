@@ -146,8 +146,8 @@
     var fill = document.querySelector(".hero__name-fill");
     if (!panel || !nameEl || !fill) return;
 
-    var IMG_W = 896, IMG_H = 1115;   // natural portrait size
-    var FOCUS_X = 0.5, FOCUS_Y = 0.30; // must match .hero__photo object-position
+    var IMG_W = 896, IMG_H = 1494;   // natural portrait size (sage backdrop, with headroom)
+    var FOCUS_X = 0.5, FOCUS_Y = 0.44; // must match .hero__photo object-position
 
     function sync() {
       var pr = panel.getBoundingClientRect();
