@@ -136,6 +136,41 @@
     stats.forEach(countUp);
   }
 
+  /* ---- Knockout name: reveal the same continuous portrait as the panel ----
+     The letters are holes in the cream layer. To make them seamless with the
+     portrait panel (like the reference), we size and position the letters'
+     background image to match the panel's cover geometry exactly. ---- */
+  (function () {
+    var panel = document.querySelector(".hero__panel");
+    var nameEl = document.querySelector(".hero__name");
+    var fill = document.querySelector(".hero__name-fill");
+    if (!panel || !nameEl || !fill) return;
+
+    var IMG_W = 896, IMG_H = 1115;   // natural portrait size
+    var FOCUS_X = 0.5, FOCUS_Y = 0.30; // must match .hero__photo object-position
+
+    function sync() {
+      var pr = panel.getBoundingClientRect();
+      var nr = nameEl.getBoundingClientRect(); // stable (not animated)
+      if (pr.width < 2 || nr.width < 2) return;
+      var s = Math.max(pr.width / IMG_W, pr.height / IMG_H); // cover scale
+      var dw = IMG_W * s, dh = IMG_H * s;
+      var imgLeft = pr.left + (pr.width - dw) * FOCUS_X;
+      var imgTop = pr.top + (pr.height - dh) * FOCUS_Y;
+      fill.style.backgroundSize = dw + "px " + dh + "px";
+      fill.style.backgroundPosition = (imgLeft - nr.left) + "px " + (imgTop - nr.top) + "px";
+      fill.style.backgroundRepeat = "no-repeat";
+    }
+
+    sync();
+    window.addEventListener("resize", sync);
+    window.addEventListener("load", sync);
+    fill.addEventListener("animationend", sync);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
+    setTimeout(sync, 300);
+    setTimeout(sync, 1000);
+  })();
+
   /* ---- Year ---- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
